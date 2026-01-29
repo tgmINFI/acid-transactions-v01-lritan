@@ -63,7 +63,7 @@ class FactoryWindow(QWidget):
         control_layout.addWidget(self.btn_process)
 
         self.btn_reset = QPushButton("RESET DATABASE")
-        self.btn_reset.setStyleSheet("background-color: #444; color: white;")
+        self.btn_reset.setStyleSheet("background-color: red; color: white;")
         self.btn_reset.clicked.connect(self.reset_app)
         control_layout.addWidget(self.btn_reset)
         
@@ -99,6 +99,15 @@ class FactoryWindow(QWidget):
         main_layout.addLayout(top_layout, 1)
         main_layout.addLayout(bottom_layout, 1)
         
+        # NEU 
+        extra_group = QGroupBox("ִ•.ִ  ʚ☆ɞ .• ࣪+ִ •..ᐟ")
+        extra_layout = QVBoxLayout()
+        extra_label = QLabel("Modifiziert von Lena I. Ritan ,3BHWII")
+        extra_layout.addWidget(extra_label)
+        extra_group.setLayout(extra_layout)
+        main_layout.addWidget(extra_group)
+
+
         self.setLayout(main_layout)
 
     def log_message(self, message):
@@ -131,6 +140,7 @@ class FactoryWindow(QWidget):
             self.log_table.setItem(row_idx, 0, QTableWidgetItem(str(row_data[0])))
             self.log_table.setItem(row_idx, 1, QTableWidgetItem(str(row_data[1])))
             self.log_table.setItem(row_idx, 2, QTableWidgetItem(str(row_data[2])))
+
             
         conn.close()
 
